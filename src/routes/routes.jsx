@@ -5,7 +5,7 @@ import Mainayout from "../layouts/MainLyout";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import LessonDetails from "../pages/LessonDetails/LessonDetails";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -24,8 +24,8 @@ const router = createBrowserRouter([
         element: <Register></Register>
         },
         {
-            path: "/servicedetails",
-        element: <ServiceDetails></ServiceDetails>
+            path: "/lessonsDetails",
+        element: <LessonDetails></LessonDetails>
         },
 
       ]

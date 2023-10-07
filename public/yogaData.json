@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Spin",
+      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+      "price": 20,
+      "shortDescription": "Spin Yoga combines cycling with mindfulness."
+    },
+    {
+      "id": 2,
+      "name": "Yoga",
+      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+      "price": 15,
+      "shortDescription": "Yoga offers a serene escape and gentle stretches."
+    },
+    {
+      "id": 3,
+      "name": "Bodysculpt",
+      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+      "price": 25,
+      "shortDescription": "High-intensity workout to sculpt your body."
+    },
+    {
+      "id": 4,
+      "name": "Zumba",
+      "image":"https://i.ibb.co/CvbgmDv/spinyoga.png",
+      "price": 18,
+      "shortDescription": "Fun and dynamic dance-based fitness."
+    },
+    {
+      "id": 5,
+      "name": "Aquacise",
+      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+      "price": 30,
+      "shortDescription": "Low-impact water-based fitness class."
+    },
+    {
+      "id": 6,
+      "name": "Box Fit",
+      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+      "price": 22,
+      "shortDescription": "High-energy boxing-inspired workout."
+    }
+  ]
