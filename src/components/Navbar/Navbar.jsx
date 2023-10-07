@@ -5,16 +5,16 @@ const Navbar = () => {
   const {user} =useContext(AuthContext)
   const navLinks = (
     <>
-      <li>
+      <li className="text-lg text-purple-400">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="text-lg text-purple-400">
         <NavLink to="/about">Home</NavLink>
       </li>
-      <li>
+      <li className="text-lg text-purple-400">
         <NavLink to="/career">Home</NavLink>
       </li>
-      <li>
+      <li className="text-lg text-purple-400">
         <NavLink to="/action">Home</NavLink>
       </li>
     </>
@@ -41,12 +41,12 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
           >
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">WFC</a>
+        <Link to="/" className="text-6xl text-purple-700 font-bold">WFC</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -61,12 +61,11 @@ const Navbar = () => {
         </label>
         <ul
           tabIndex={0}
-          className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+          className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content text-white rounded-box w-52"
         >
           <li>
             <a className="justify-between">
               Profile
-              <span className="badge">New</span>
             </a>
           </li>
           <li>
@@ -80,7 +79,7 @@ const Navbar = () => {
     </div>
       :
       <Link to="/login" className="navbar-end">
-      <button className="btn">Login</button>
+      <button className="btn btn-ghost text-purple-400">Login</button>
     </Link>
       }
     </div>
