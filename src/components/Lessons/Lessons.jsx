@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Lessoncard from "../LessonCard/Lessoncard";
+import LessonCard from "../LessonCard/LessonCard";
 
 const Lessons = () => {
   const [lessons, setLessons] = useState([]);
@@ -14,7 +14,7 @@ const Lessons = () => {
         <h2 className="text-center mb-4 text-3xl">All the lesson that we provide</h2>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {lessons.map(lesson =><Lessoncard key={lesson.id} lesson={lesson}></Lessoncard>)}
+        {lessons.map(lesson =><LessonCard key={lesson.id} lesson={lesson}></LessonCard>)}
       </div>
     </div>
   )

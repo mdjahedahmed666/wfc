@@ -1,11 +1,23 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
-    logOut().then().catch;
+    logOut()
+    .then(
+      Swal.fire({
+        title: 'Log Out',
+        text: 'Successfully logged out',
+        icon: 'Success',
+        confirmButtonText: 'Cool'
+      })
+    )
+    .catch((error) => {
+      console.error("Logout failed", error);
+    })
   };
   const navLinks = (
     <>
@@ -16,7 +28,7 @@ const Navbar = () => {
         <NavLink to="/about">About</NavLink>
       </li>
       <li className="text-lg text-purple-400">
-        <NavLink to="timetable">Timetable</NavLink>
+        <NavLink to="/timetable">Timetable</NavLink>
       </li>
       <li className="text-lg text-purple-400">
         <NavLink to="/bookedlesson">Booked Lesson</NavLink>
@@ -25,7 +37,7 @@ const Navbar = () => {
   );
   return (
     <div className="navbar bg-base-100">
-      <div className="container mx-auto px-4 md:px-32">
+      <div className="container mx-auto px-4 md:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -61,8 +73,8 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
-        {user ? (
-          <div className="flex-none gap-2">
+        {user ? 
+          <div className="flex-none gap-2 navbar-end">
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -82,11 +94,13 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-        ) : (
-          <Link to="/login" className="navbar-end">
+         : 
+          <div className="navbar-end">
+            <Link to="/login">
             <button className="btn btn-ghost text-purple-400">Login</button>
           </Link>
-        )}
+          </div>
+        }
       </div>
     </div>
   );

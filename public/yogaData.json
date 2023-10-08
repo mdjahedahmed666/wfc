@@ -1,44 +1,62 @@
 [
-    {
-      "id": 1,
-      "name": "Spin",
-      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
-      "price": 20,
-      "shortDescription": "Spin Yoga combines cycling with mindfulness."
-    },
-    {
-      "id": 2,
-      "name": "Yoga",
-      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
-      "price": 15,
-      "shortDescription": "Yoga offers a serene escape and gentle stretches."
-    },
-    {
-      "id": 3,
-      "name": "Bodysculpt",
-      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
-      "price": 25,
-      "shortDescription": "High-intensity workout to sculpt your body."
-    },
-    {
-      "id": 4,
-      "name": "Zumba",
-      "image":"https://i.ibb.co/CvbgmDv/spinyoga.png",
-      "price": 18,
-      "shortDescription": "Fun and dynamic dance-based fitness."
-    },
-    {
-      "id": 5,
-      "name": "Aquacise",
-      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
-      "price": 30,
-      "shortDescription": "Low-impact water-based fitness class."
-    },
-    {
-      "id": 6,
-      "name": "Box Fit",
-      "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
-      "price": 22,
-      "shortDescription": "High-energy boxing-inspired workout."
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Spin",
+    "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+    "price": 20,
+    "shortDescription": "Spin Yoga combines cycling with mindfulness.",
+    "largeDescription": "Spin Yoga is a transformative fitness experience that seamlessly blends the invigorating power of cycling with the calming practices of mindfulness. In this class, you'll embark on a journey of physical and mental well-being. The cycling component provides a dynamic cardiovascular workout that strengthens your legs and boosts your endurance. But Spin Yoga is not just about building physical fitness; it's also about nurturing your mental clarity. Throughout the session, you'll be guided through mindfulness exercises, allowing you to connect with your inner self, reduce stress, and find tranquility. Whether you're a cycling enthusiast looking to deepen your practice or someone seeking a holistic approach to wellness, Spin Yoga offers a unique and enriching experience. Join us to pedal your way to physical vitality and inner serenity.",
+    "day": "Saturday",
+    "creditDuration": "2 hours"
+  },
+  {
+    "id": 2,
+    "name": "Yoga",
+    "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+    "price": 15,
+    "shortDescription": "Yoga offers a serene escape and gentle stretches.",
+    "largeDescription": "Welcome to the world of Yoga, where serenity and rejuvenation await you. Our Yoga classes provide a serene escape from the chaos of everyday life. Through a carefully curated series of gentle stretches, postures, and controlled breathing, you'll embark on a journey of self-discovery and holistic wellness. Yoga is not just a physical practice; it's a path to inner peace and balance. As you flow through the asanas, you'll not only improve your flexibility and strength but also cultivate mental clarity and emotional harmony. Our experienced instructors will guide you through each session, ensuring that you experience the full spectrum of benefits that Yoga offers. Whether you're a beginner or an experienced Yogi, our classes are designed to accommodate all levels. Join us on the mat to unlock the transformative power of Yoga and embrace a life of well-being and tranquility.",
+    "day": "Sunday",
+    "creditDuration": "1 hour"
+  },
+  {
+    "id": 3,
+    "name": "Bodysculpt",
+    "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+    "price": 25,
+    "shortDescription": "High-intensity workout to sculpt your body.",
+    "largeDescription": "Introducing Bodysculpt, the ultimate high-intensity workout designed to sculpt and transform your body. If you're ready to take your fitness journey to the next level, this is the class for you. Bodysculpt is more than just a workout; it's a dynamic fusion of strength training, cardio, and functional exercises that target every major muscle group. Our certified trainers will push your limits and challenge you to achieve the physique you've always dreamed of. Expect to sweat, to feel the burn, and to see incredible results. The class is structured to maximize calorie burn, increase lean muscle mass, and boost metabolism. As you progress, you'll notice improved endurance, enhanced strength, and a more sculpted appearance. Join us in our Bodysculpt sessions and embrace the transformative power of high-intensity fitness.",
+    "day": "Saturday",
+    "creditDuration": "1 hour"
+  },
+  {
+    "id": 4,
+    "name": "Zumba",
+    "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+    "price": 18,
+    "shortDescription": "Fun and dynamic dance-based fitness.",
+    "largeDescription": "Get ready to dance your way to fitness with Zumba! Our classes offer a fun and dynamic approach to achieving your fitness goals while enjoying energetic dance moves and music from around the world. Zumba is not just a workout; it's a party where fitness meets fun. Our certified Zumba instructors will guide you through exhilarating routines that include salsa, merengue, hip-hop, and more. You'll sweat, smile, and groove to the rhythm as you burn calories and improve cardiovascular health. Zumba is suitable for all fitness levels, and no dance experience is required. It's the perfect way to add excitement to your fitness routine and boost your mood. Join us on the dance floor and experience the joy of Zumba - where every move is a celebration of fitness and life!",
+    "day": "Sunday",
+    "creditDuration": "1 hour"
+  },
+  {
+    "id": 5,
+    "name": "Aquacise",
+    "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+    "price": 30,
+    "shortDescription": "Low-impact water-based fitness class.",
+    "largeDescription": "Dive into the world of Aquacise, where fitness and the soothing properties of water come together to create a unique and effective workout experience. Our low-impact water-based fitness class takes place in a pool, providing a gentle yet powerful way to enhance your physical well-being. The buoyancy of water reduces the impact on your joints, making it an ideal choice for individuals of all fitness levels, including those recovering from injuries. In Aquacise, you'll engage in a variety of exercises that focus on improving flexibility, strength, and cardiovascular health. As you move through the water, you'll feel the resistance and support it provides, resulting in a full-body workout that's both invigorating and therapeutic. Join us in the pool to discover the benefits of Aquacise and embark on a journey to better health.",
+    "day": "Saturday",
+    "creditDuration": "2 hours"
+  },
+  {
+    "id": 6,
+    "name": "Box Fit",
+    "image": "https://i.ibb.co/CvbgmDv/spinyoga.png",
+    "price": 22,
+    "shortDescription": "High-energy boxing-inspired workout.",
+    "largeDescription": "Step into the ring with Box Fit, our high-energy boxing-inspired workout that packs a punch in every session. If you're looking for a dynamic and challenging fitness experience that combines cardio, strength, and agility training, look no further. Box Fit is designed to elevate your fitness level while delivering an exhilarating and empowering workout. Our expert trainers will teach you the fundamentals of boxing, from jabs and hooks to footwork and defensive moves. You'll hit the heavy bag, focus mitts, and engage in intense interval training that will push your limits. The benefits of Box Fit include increased stamina, improved coordination, enhanced cardiovascular health, and stress relief. It's a full-body workout that also builds confidence and self-defense skills. Join us in the gym, put on your gloves, and get ready to unleash your inner fighter with Box Fit.",
+    "day": "Sunday",
+    "creditDuration": "2 hours"
+  }
+]

@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import LessonDetails from "../pages/LessonDetails/LessonDetails";
+import Timetable from "../pages/Timetable/Timetable";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -24,8 +25,14 @@ const router = createBrowserRouter([
         element: <Register></Register>
         },
         {
-            path: "/lessonsDetails",
-        element: <LessonDetails></LessonDetails>
+            path: "/timetable",
+        element: <Timetable></Timetable>,
+        loader: () => fetch("/yogaData.json")
+        },
+        {
+            path: "/lessonsDetails/:id",
+        element: <LessonDetails></LessonDetails>,
+        loader: () => fetch("/yogaData.json")
         },
 
       ]

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const Lessoncard = ({lesson}) => {
-    const {name,image,price,shortDescription} = lesson;
+const LessonCard = ({lesson}) => {
+    const {id,name,image,price,shortDescription} = lesson;
   return (
     <div>
         <div className="card bg-base-100 shadow-xl">
@@ -10,7 +10,7 @@ const Lessoncard = ({lesson}) => {
     <h2 className="card-title">{name}</h2>
     <p>{shortDescription}</p>
     <p>Price: ${price}</p>
-    <Link to="/lessionDetails" className="card-actions justify-end">
+    <Link to={`/lessonsDetails/${id}`} className="card-actions justify-end">
       <button className="btn btn-primary">View details</button>
     </Link>
   </div>
@@ -19,4 +19,4 @@ const Lessoncard = ({lesson}) => {
   )
 }
 
-export default Lessoncard;
+export default LessonCard;
