@@ -20,6 +20,12 @@ const LessonDetails = () => {
       icon: "Success",
       confirmButtonText: "ok",
     });
+    const existingLesson = JSON.parse(localStorage.getItem("bookedLesson")) || []
+    const alreadyBooked = existingLesson.some((bookedLesson) => bookedLesson.id === lesson.id);
+    if (!alreadyBooked){
+existingLesson.push(lesson);
+localStorage.setItem("bookedLesson", JSON.stringify(existingLesson));
+    }
   };
   return (
     <div className="card bg-base-100 shadow-xl">

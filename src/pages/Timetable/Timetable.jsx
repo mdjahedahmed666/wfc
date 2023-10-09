@@ -1,8 +1,24 @@
 
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const Timetable = () => {
+const Timetable = (lesson) => {
+  console.log(lesson);
   const lessonData = useLoaderData();
+  const handleBook = () => {
+    Swal.fire({
+      title: "Lesson Booked",
+      text: "Successfully booked the lesson",
+      icon: "success",
+      confirmButtonText: "Ok",
+    });
+    const existingLesson = JSON.parse(localStorage.getItem("bookedLesson")) || []
+    const alreadyBooked = existingLesson.some((bookedLesson) => bookedLesson.id == lesson.id);
+    if (!alreadyBooked){
+existingLesson.push(lesson);
+localStorage.setItem("bookedLesson", JSON.stringify(existingLesson));
+    }
+  };
   return (
     <div className="container mx-auto px-4 md:px-16 text-center mt-10">
       <h2 className="text-2xl font-bold">Lesson will be start every weekend at 9 o'clock in the morning</h2>
@@ -18,12 +34,12 @@ const Timetable = () => {
             </tr>
           </thead>
           <tbody>
-            {lessonData.map((l, index) => (
-              <tr key={index}>
-                <th>{l.id}</th>
-                <td>{l.name}</td>
-                <td>{l.day}</td>
-                <td>{l.creditDuration}</td>
+            {lessonData.map((lesson, index) => (
+              <tr onClick={() =>handleBook(lesson)} key={index}>
+                <th>{lesson.id}</th>
+                <td>{lesson.name}</td>
+                <td>{lesson.day}</td>
+                <td>{lesson.creditDuration}</td>
               </tr>
             ))}
           </tbody>

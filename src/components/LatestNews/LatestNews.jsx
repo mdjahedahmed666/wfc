@@ -10,7 +10,6 @@ const LatestNews = () => {
         .then(data => setNews(data))
         
       },[])
-      console.log(news);
   return (
     <div className="container mx-auto px-4 md:px-32 my-16 bg-purple-50">
         <div>

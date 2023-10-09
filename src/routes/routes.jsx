@@ -1,16 +1,21 @@
 import {
     createBrowserRouter,
   } from "react-router-dom";
-import Mainayout from "../layouts/MainLyout";
+import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import LessonDetails from "../pages/LessonDetails/LessonDetails";
 import Timetable from "../pages/Timetable/Timetable";
+import PrivateRoute from "./PrivateRoute";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
+import Feedback from "../pages/Feedback/Feedback";
+import BookedLesson from "../pages/BookedLesson/BookedLesson";
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Mainayout></Mainayout>,
+      element: <MainLayout/>,
+      errorElement: <PageNotFound/>,
       children:[
         {
             path: "/",
@@ -24,6 +29,15 @@ const router = createBrowserRouter([
             path: "/register",
         element: <Register></Register>
         },
+        
+        {
+            path: "/bookedLesson",
+        element: <PrivateRoute><BookedLesson></BookedLesson></PrivateRoute>
+        },
+        {
+          path: "/feedback",
+      element: <PrivateRoute><Feedback></Feedback></PrivateRoute>
+      },
         {
             path: "/timetable",
         element: <Timetable></Timetable>,
@@ -31,7 +45,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/lessonsDetails/:id",
-        element: <LessonDetails></LessonDetails>,
+        element: <PrivateRoute><LessonDetails></LessonDetails></PrivateRoute>,
         loader: () => fetch("/yogaData.json")
         },
 
