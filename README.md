@@ -11,3 +11,10 @@ Currently, two official plugins are available:
 Website name: Weekend fitness Club
 live link: https://assignment9-aec0b.web.app/
 
+Features:
+*Service
+*Service details
+*Timetable
+*Feedback
+*Login
+*register
