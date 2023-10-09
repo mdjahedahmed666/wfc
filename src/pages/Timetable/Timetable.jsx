@@ -21,7 +21,7 @@ localStorage.setItem("bookedLesson", JSON.stringify(existingLesson));
   };
   return (
     <div className="container mx-auto px-4 md:px-16 text-center mt-10">
-      <h2 className="text-2xl font-bold">Lesson will be start every weekend at 9 o'clock in the morning</h2>
+      <h2 className="text-2xl md:font-bold">Lesson will be start every weekend at 9 o'clock in the morning</h2>
       <div className="overflow-x-auto mt-10 w-1/2 mx-auto">
         <table className="table">
           {/* head */}

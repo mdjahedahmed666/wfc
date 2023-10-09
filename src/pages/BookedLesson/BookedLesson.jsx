@@ -14,11 +14,11 @@ const BookedLesson = () => {
       <div className="mt-10">
         <h2 className="text-center mb-10 text-2xl font-bold">Your lesson</h2>
       </div>
-      <div className="grid lg:grid-cols-3 mb-14">
+      <div className="grid lg:grid-cols-3 mb-14 gap-4">
         {bookedLesson.map((lesson, index) => (
           <div
             key={index}
-            className="card w-96 bg-base-100 shadow-xl image-full"
+            className="card bg-base-100 shadow-xl image-full mb-4"
           >
             <figure>
               <img src={lesson.image} alt="Shoes" />

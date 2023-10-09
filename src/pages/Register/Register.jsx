@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const [error, setError] = useState("");
   const {createUser} = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -15,13 +17,25 @@ const Register = () => {
     const email = form.get('email');
     const password = form.get('password');
 console.log(name, photo, email, password);
-    createUser(email, password)
-    .then(res =>{
-      console.log(res.user);
-      navigate('/login');
 
-    })
-    .catch(err => console.error(err));
+setError("")
+    createUser(email, password)
+    .then(
+      
+      Swal.fire({
+        title: 'Register',
+        text: 'Successfully Registered',
+        icon: 'Success',
+        confirmButtonText: 'ok'
+      }),
+      navigate('/login')
+     
+
+    )
+    .catch(err => {
+      console.error(err);
+      setError(err.message);
+    });
 
   }
   return (
@@ -61,8 +75,17 @@ console.log(name, photo, email, password);
             <button className="btn btn-primary">Register</button>
           </div>
         </form>
+        {
+          error && <span className="text-red-400">{error}</span>
+        }
+        
         <div className="label p-5 pt-0">
-            <Link to="/login" className="text-sm link link-hover mb-3">Already have an account? Login</Link>
+          <p>Already have an account?
+          <Link to="/login" className="text-sm link link-hover mb-4">
+                Login
+              </Link>
+          </p>
+            
           </div>
       </div>
     </div>

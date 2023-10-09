@@ -1,10 +1,13 @@
-import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Login = () => {
-    const { logInUser,logInWithGoogle } = useContext(AuthContext);
+  const [logError, setLogError] = useState("");
+  const { logInUser, logInWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -12,23 +15,34 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    logInUser(email, password)
-      .then((res) => {
-        console.log(res.user);
-        navigate("/");
-      })
-      .catch((err) => console.error(err));
-  };
-  const handleGoogleLogIn = () =>{
-    logInWithGoogle()
-    .then(result=>{
-      console.log(result.user);
-
-      navigate("/");
-
-    })
     
-  }
+    if(password.length<6){
+      setLogError("Password must be at least 6 characters");
+      return;
+    }
+    logInUser(email, password)
+
+      .then(() => {
+        Swal.fire({
+          title: "Login",
+          text: "Successfully Login",
+          icon: "Success",
+          confirmButtonText: "ok",
+        }),
+          navigate(location.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+        setLogError(error.message);
+      });
+  };
+
+  const handleGoogleLogIn = () => {
+    logInWithGoogle()
+    .then(()=>{
+      navigate(location.state ? location.state : "/");
+    })
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col">
@@ -70,6 +84,7 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
+          {logError && <span className="text-red-400">{logError}</span>}
           <div className="flex items-center justify-center gap-4">
             <h4>Continue with</h4>
             <button onClick={handleGoogleLogIn}>
@@ -80,7 +95,6 @@ const Login = () => {
             <p>
               New here?
               <Link to="/register" className="text-sm link link-hover">
-                {" "}
                 Register
               </Link>
             </p>

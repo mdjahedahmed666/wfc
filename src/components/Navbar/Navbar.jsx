@@ -4,20 +4,21 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2'
 
 const Navbar = () => {
-  const { user, logOut,userName } = useContext(AuthContext);
+  const { user, logOut} = useContext(AuthContext);
   console.log(user);
   const navigate = useNavigate();
 
   const handleLogOut = () => {
     logOut()
     .then(
-      navigate('/') &&
+      
       Swal.fire({
         title: 'Log Out',
         text: 'Successfully logged out',
         icon: 'Success',
         confirmButtonText: 'ok'
-      })
+      }),
+      navigate('/')
 
     )
     .catch((error) => {
@@ -79,29 +80,29 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         {user ? 
-      //   <div className="navbar-end">
-      // <Link onClick={handleLogOut}>Logout</Link>
-      // </div>
-          <div className="flex-none gap-2 navbar-end">
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={user.photo} />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content text-white rounded-box w-52"
-              >
-                <li>
-                  <p className="justify-between">{userName}</p>
-                </li>
-                <li>
-                  <Link onClick={handleLogOut}>Logout</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div className="navbar-end">
+      <Link onClick={handleLogOut}>Logout</Link>
+      </div>
+          // <div className="flex-none gap-2 navbar-end">
+          //   <div className="dropdown dropdown-end">
+          //     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          //       <div className="w-10 rounded-full">
+          //         <img src={user.photo} />
+          //       </div>
+          //     </label>
+          //     <ul
+          //       tabIndex={0}
+          //       className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content text-white rounded-box w-52"
+          //     >
+          //       <li>
+          //         <p className="justify-between">{userName}</p>
+          //       </li>
+          //       <li>
+          //         <Link onClick={handleLogOut}>Logout</Link>
+          //       </li>
+          //     </ul>
+          //   </div>
+          // </div>
          : 
           <div className="navbar-end">
             <Link to="/login">
