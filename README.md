@@ -8,3 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # b8a9-event-management-mdjahedahmed666
 
+Website name: Weekend fitness Club
+live link: https://assignment9-aec0b.web.app/
+
